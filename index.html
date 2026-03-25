@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Tuition Management</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container" id="loginPage">
+        <h1>Admin Login</h1>
+        <form id="loginForm">
+            <label for="passwordInput">Password</label>
+            <input type="password" id="passwordInput" required autocomplete="current-password" />
+            <button type="submit">Login</button>
+            <p id="loginError" class="error"></p>
+        </form>
+    </div>
+
+    <div class="container hidden" id="appPage">
+        <header>
+            <h1>Student Tuition Management</h1>
+            <button id="logoutBtn">Logout</button>
+        </header>
+
+        <section class="panel">
+            <h2>Add / Update Student</h2>
+            <form id="studentForm">
+                <div class="grid">
+                    <div>
+                        <label>Date of Join</label>
+                        <input type="date" id="joinDate" required />
+                    </div>
+                    <div>
+                        <label>Student Name</label>
+                        <input type="text" id="name" required />
+                    </div>
+                    <div>
+                        <label>Class</label>
+                        <input type="text" id="className" required />
+                    </div>
+                    <div>
+                        <label>School</label>
+                        <input type="text" id="school" required />
+                    </div>
+                    <div>
+                        <label>Subject</label>
+                        <input list="subjectList" id="subject" required />
+                        <datalist id="subjectList"></datalist>
+                    </div>
+                    <div>
+                        <label>Monthly Fee</label>
+                        <input type="number" id="monthlyFee" min="0" required />
+                    </div>
+                    <div>
+                        <label>Status</label>
+                        <select id="status">
+                            <option value="active">Active</option>
+                            <option value="left">Left</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>&nbsp;</label>
+                        <button type="submit" id="saveBtn">Add / Update</button>
+                    </div>
+                </div>
+                <input type="hidden" id="studentId" />
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Teacher Management</h2>
+            <form id="teacherForm">
+                <div class="grid">
+                    <div>
+                        <label>Teacher Name</label>
+                        <input type="text" id="teacherName" required />
+                    </div>
+                    <div>
+                        <label>Subjects (comma-separated)</label>
+                        <input type="text" id="teacherSubjects" placeholder="Math, English" required />
+                    </div>
+                    <div>
+                        <label>&nbsp;</label>
+                        <button type="submit">Add / Update Teacher</button>
+                    </div>
+                </div>
+                <input type="hidden" id="teacherId" />
+            </form>
+            <table id="teachersTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Subjects</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section class="panel">
+            <h2>Current Students</h2>
+            <input type="text" id="searchInput" placeholder="Search by name, class, school" />
+            <table id="studentsTable">
+                <thead>
+                    <tr>
+                        <th>Join Date</th>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>School</th>
+                        <th>Subject</th>
+                        <th>Monthly Fee</th>
+                        <th>Payment Status</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section class="panel">
+            <h2>Left Students</h2>
+            <table id="leftStudentsTable">
+                <thead>
+                    <tr>
+                        <th>Joined</th>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>School</th>
+                        <th>Subject</th>
+                        <th>Left Date</th>
+                        <th>Payment Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section class="panel">
+            <h2>Shared Records</h2>
+            <button id="exportJSON">Export JSON</button>
+            <button id="clearData">Clear All Data</button>
+            <p>Note: Data stored to localStorage (browser). If you refresh, records remain.</p>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
