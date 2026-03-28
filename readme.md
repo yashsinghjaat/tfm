@@ -14,3 +14,19 @@ Online payment integration
 SMS/Email notifications
 Multi-user roles (Admin, Teacher, Staff)
 Mobile app version
+
+
+
+🚀 Future Improvements
+Online payment integration
+SMS/Email notifications
+Multi-user roles (Admin, Teacher, Staff)
+Mobile app version
+
+
+🚀 Future Improvements
+Online payment integration
+SMS/Email notifications
+Multi-user roles (Admin, Teacher, Staff)
+Mobile app version
+
